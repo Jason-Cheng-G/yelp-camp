@@ -1,0 +1,23 @@
+{
+  "name": "yelp-camp",
+  "version": "1.0.0",
+  "description": "Yelp Camp",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jason-Cheng-G/yelp-camp.git"
+  },
+  "author": "Gong Cheng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jason-Cheng-G/yelp-camp/issues"
+  },
+  "homepage": "https://github.com/Jason-Cheng-G/yelp-camp#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  }
+}
