@@ -46,6 +46,35 @@ router.post("/", isLoggedIn, function(req, res) {
   //redirect campground show page
 });
 
+//Comment Edit route
+router.get("/:comment_id/edit", function(req, res) {
+  Comment.findById(req.params.comment_id, function(err, foundComment) {
+    if (err) {
+      res.redirect("back");
+    } else {
+      res.render("comments/edit", {
+        campground_id: req.params.id,
+        comment: foundComment
+      });
+    }
+  });
+});
+
+//Comment Update Route
+router.put("/:comment_id/", function(req, res) {
+  Comment.findByIdAndUpdate(req.params.comment_id, req.body.comment, function(
+    err,
+    updatedComment
+  ) {
+    if (err) {
+      res.redirect("/campgrounds");
+    } else {
+      res.redirect("/campgrounds/" + req.params.id);
+    }
+  });
+});
+//redirect somewhere(show page));
+
 //middleware
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
